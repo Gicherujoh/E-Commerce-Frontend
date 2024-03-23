@@ -32,7 +32,7 @@ const Cart = () => {
     const CheckOut = async() => {
         if (user && product.length!==0) {
             try {
-                const res = await axios.post('https://myapis-tj2u.onrender.com/cart-data', {
+                const res = await axios.post('https://e-commerce-website-20.onrender.com/cart-data', {
                     total: amount,
                     products:product
                 })

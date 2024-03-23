@@ -32,7 +32,7 @@ const Login = () => {
     const { email, setPassword } = data;
 
       try {
-        const response = await axios.post('https://myapis-tj2u.onrender.com/login', {
+        const response = await axios.post('https://e-commerce-website-20.onrender.com/login', {
           email,
           setPassword
         });
