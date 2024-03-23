@@ -28,7 +28,7 @@ const MpesaForm = () => {
     const HandleSubmit = async(data) => {
       const { phone, amount } = data;
       try {
-        const response = await axios.post('http://localhost:3770/callback', {
+        const response = await axios.post('https://myapis-tj2u.onrender.com/callback', {
           phone,
           amount
         });

@@ -17,6 +17,7 @@ const schema = yup.object().shape({
   setPassword: yup.string().min(4).max(15).required(),
   confirmPassword:yup.string().oneOf([yup.ref('setPassword'),null])
 })
+//https://myapis-tj2u.onrender.com
 const Register = () => {
    const {register,handleSubmit,formState:{errors}} = useForm({
          resolver:yupResolver(schema)
@@ -32,7 +33,7 @@ const Register = () => {
   const HandleSubmit =async(data) => {
     const { name, email, setPassword, phone } = data;
     try {
-      const response = await axios.post('http://localhost:3770/register', {
+      const response = await axios.post('https://myapis-tj2u.onrender.com/register', {
           name,
           email,
           phone,
