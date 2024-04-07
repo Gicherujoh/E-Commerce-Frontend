@@ -33,7 +33,7 @@ const Register = () => {
   const HandleSubmit =async(data) => {
     const { name, email, setPassword, phone } = data;
     try {
-      const response = await axios.post('https://e-commerce-website-20.onrender.com/register', {
+      const response = await axios.post('https://e-commerce-website-23.onrender.com/register', {
           name,
           email,
           phone,
