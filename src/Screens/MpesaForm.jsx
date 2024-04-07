@@ -32,6 +32,7 @@ const MpesaForm = () => {
           phone,
           amount
         });
+        console.log(response)
         if (response?.data) {
           console.log(response);
           }

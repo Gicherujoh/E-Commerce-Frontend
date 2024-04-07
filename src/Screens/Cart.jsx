@@ -14,7 +14,6 @@ import './Cart.css';
 
 import { UserContext } from '../Context/UserContext';
 const Cart = () => {
-    const[items,setItems]=useState(0)
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [clearcart,setClearCart] = useState(true)
@@ -25,26 +24,15 @@ const Cart = () => {
     },[product])
     const ContinueShopping = () => {
          navigate('/')
-    }
-   
-    console.log(product)
-    console.log(items)
-    const CheckOut = async() => {
-        if (user && product.length!==0) {
-            try {
-                const res = await axios.post('https://e-commerce-website-20.onrender.com/cart-data', {
-                    total: amount,
-                    products:product
-                })
-                if (res.data.total) {
-                    navigate('/checkout')
-                }
-            } catch (err) {
-                console.log(err)
-            }
+    }  
+    console.log(product);
+    console.log(user)
+    const CheckOut = ()=>{
+        if (user && product) {
+           navigate('/checkout')
         } else {
-            navigate('/register')
-          }
+           navigate('/login')
+       }
     }
     const clearCart=() => {
         dispatch(ClearCart())
@@ -67,6 +55,7 @@ const Cart = () => {
     }
   return (
       <Container className='mt-5'>
+          
           { !clearcart ?(<h2 className='text-center'>Your Cart is empty</h2>):!product ? (<Spinner animation="border" role='status'><span className="visually-hidden">Loading...</span></Spinner>) : (
                     product?.map((items) => (
                  
